@@ -1,5 +1,4 @@
 name: Build Boards
-
 on:
   push:
     branches:
@@ -8,10 +7,10 @@ on:
   pull_request:
     branches:
       - main
-
+  workflow_dispatch:  # 加上这一行！！开启手动触发按钮
 permissions:
   contents: read
-
+  
 jobs:
   prepare:
     name: Determine variants to build
