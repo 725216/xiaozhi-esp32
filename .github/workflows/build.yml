@@ -30,8 +30,8 @@ jobs:
         name: Select variants based on changes
         shell: bash
         run: |
-          # 固定编译两块板子，关闭文件变更自动筛选
-          echo 'variants=[{"board":"bread-compact-esp32","name":"","full_name":"bread-compact-esp32"},{"board":"bread-compact-esp32-coze","name":"","full_name":"bread-compact-esp32-coze"}]' >> "$GITHUB_OUTPUT"
+          # 固定编译两块板子，关闭文件变更自动筛选，name不再为空
+          echo 'variants=[{"board":"bread-compact-esp32","name":"bread-compact-esp32","full_name":"bread-compact-esp32"},{"board":"bread-compact-esp32-coze","name":"bread-compact-esp32-coze","full_name":"bread-compact-esp32-coze"}]' >> "$GITHUB_OUTPUT"
   build:
     name: Build ${{ matrix.full_name }}
     needs: prepare
