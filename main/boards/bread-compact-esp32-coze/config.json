@@ -1,5 +1,5 @@
 {
-    "type": "bread-compact-esp32-coze",
+    "type": "bread-compact-esp32",
     "target": "esp32",
     "builds": [
         {
