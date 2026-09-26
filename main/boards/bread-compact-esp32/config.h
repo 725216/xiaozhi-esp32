@@ -18,7 +18,7 @@
 #define AUDIO_I2S_GPIO_DIN  GPIO_NUM_6
 #define AUDIO_I2S_GPIO_DOUT GPIO_NUM_7
 #endif
-#define BOOT_BUTTON_GPIO        GPIO_NUM_4   // 修改这里，使用GPIO4作为对话触发按键
+#define BOOT_BUTTON_GPIO        GPIO_NUM_27   // 修改为GPIO27，无冲突
 #define TOUCH_BUTTON_GPIO       GPIO_NUM_5
 #define ASR_BUTTON_GPIO         GPIO_NUM_34
 #define BUILTIN_LED_GPIO        GPIO_NUM_2
