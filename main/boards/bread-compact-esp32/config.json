@@ -6,28 +6,38 @@
             "name": "bread-compact-esp32",
             "sdkconfig_append": [
                 "CONFIG_OLED_SSD1306_128X64=y",
-                "CONFIG_ESP_SR=n"
+                "CONFIG_ESP_SR=n",
+                "CONFIG_PARTITION_TABLE_CUSTOM=y",
+                "CONFIG_PARTITION_TABLE_FILENAME=\"boards/bread-compact-esp32/partitions_custom_4m.csv\""
             ]
         },
         {
             "name": "bread-compact-esp32-128x32",
             "sdkconfig_append": [
                 "CONFIG_OLED_SSD1306_128X32=y",
-                "CONFIG_ESP_SR=n"
+                "CONFIG_ESP_SR=n",
+                "CONFIG_PARTITION_TABLE_CUSTOM=y",
+                "CONFIG_PARTITION_TABLE_FILENAME=\"boards/bread-compact-esp32/partitions_custom_4m.csv\""
             ]
         },
         {
             "name": "bread-compact-esp32-coze",
             "sdkconfig_append": [
                 "CONFIG_OLED_SSD1306_128X64=y",
-                "CONFIG_ESP_SR=n"
+                "CONFIG_ESP_SR=n",
+                "CONFIG_PARTITION_TABLE_CUSTOM=y",
+                "CONFIG_PARTITION_TABLE_FILENAME=\"boards/bread-compact-esp32/partitions_custom_4m.csv\"",
+                "CFLAGS += -DBOARD_VARIANT_coze"
             ]
         },
         {
             "name": "bread-compact-esp32-coze-128x32",
             "sdkconfig_append": [
                 "CONFIG_OLED_SSD1306_128X32=y",
-                "CONFIG_ESP_SR=n"
+                "CONFIG_ESP_SR=n",
+                "CONFIG_PARTITION_TABLE_CUSTOM=y",
+                "CONFIG_PARTITION_TABLE_FILENAME=\"boards/bread-compact-esp32/partitions_custom_4m.csv\"",
+                "CFLAGS += -DBOARD_VARIANT_coze"
             ]
         }
     ]
