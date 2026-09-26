@@ -37,7 +37,4 @@
 #define DISPLAY_MIRROR_Y true
 #define LAMP_GPIO GPIO_NUM_18
 
-// 默认直接指向Coze中转服务器
-#define XIAOZHI_SERVER_URL "wss://coze.nbee.net/xiaozhi/v1"
-
 #endif // _BOARD_CONFIG_H_
