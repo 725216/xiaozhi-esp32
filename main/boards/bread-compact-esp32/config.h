@@ -20,7 +20,7 @@
 #endif
 #define BOOT_BUTTON_GPIO        GPIO_NUM_0
 #define TOUCH_BUTTON_GPIO       GPIO_NUM_5
-#define ASR_BUTTON_GPIO         GPIO_NUM_19
+#define ASR_BUTTON_GPIO         GPIO_NUM_34  // 这里修改，释放GPIO19
 #define BUILTIN_LED_GPIO        GPIO_NUM_2
 #define ML307_RX_PIN            GPIO_NUM_16
 #define ML307_TX_PIN            GPIO_NUM_17
