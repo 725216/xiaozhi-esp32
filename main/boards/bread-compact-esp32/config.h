@@ -1,58 +1,23 @@
-#ifndef _BOARD_CONFIG_H_
-#define _BOARD_CONFIG_H_
+#ifndef BOARD_CONFIG_H
+#define BOARD_CONFIG_H
 
-#include <driver/gpio.h>
+#define CHIP_NAME "ESP32"
 
-#define AUDIO_INPUT_SAMPLE_RATE  16000
-#define AUDIO_OUTPUT_SAMPLE_RATE 24000
+// ==================== 功放输出 AMP8315 V3 ====================
+#define AUDIO_I2S_GPIO_BCLK     GPIO_NUM_26
+#define AUDIO_I2S_GPIO_LRCK     GPIO_NUM_27
+#define AUDIO_I2S_GPIO_DOUT     GPIO_NUM_25
+#define AUDIO_I2S_GPIO_MCLK     I2S_GPIO_UNUSED
 
-// 如果使用 Duplex I2S 模式，请注释下面一行
-#define AUDIO_I2S_METHOD_SIMPLEX
+// ==================== INMP441 I2S麦克风输入 ====================
+#define AUDIO_I2S_MIC_GPIO_WS   GPIO_NUM_22
+#define AUDIO_I2S_MIC_GPIO_SCK  GPIO_NUM_21
+#define AUDIO_I2S_MIC_GPIO_DIN  GPIO_NUM_19
 
-#ifdef AUDIO_I2S_METHOD_SIMPLEX
-
-#define AUDIO_I2S_MIC_GPIO_WS   GPIO_NUM_25
-#define AUDIO_I2S_MIC_GPIO_SCK  GPIO_NUM_26
-#define AUDIO_I2S_MIC_GPIO_DIN  GPIO_NUM_32
-
-#define AUDIO_I2S_SPK_GPIO_DOUT GPIO_NUM_33
-#define AUDIO_I2S_SPK_GPIO_BCLK GPIO_NUM_14
-#define AUDIO_I2S_SPK_GPIO_LRCK GPIO_NUM_27
-
-#else
-
-#define AUDIO_I2S_GPIO_WS GPIO_NUM_4
-#define AUDIO_I2S_GPIO_BCLK GPIO_NUM_5
-#define AUDIO_I2S_GPIO_DIN  GPIO_NUM_6
-#define AUDIO_I2S_GPIO_DOUT GPIO_NUM_7
+// ==================== 按键、LED 预留（后续加配件） ====================
+// BOARD_BUTTON_GPIO 是小智唤醒按键，接GPIO0（开发板自带BOOT按键，可直接当唤醒键）
+#define BOARD_BUTTON_GPIO       GPIO_NUM_0
+#define BOARD_LED_GPIO          GPIO_NUM_NC  // NC=不使用，后面要加LED可以改成对应GPIO
+#define BOARD_POWER_GPIO        GPIO_NUM_NC
 
 #endif
-
-#define BOOT_BUTTON_GPIO        GPIO_NUM_0
-#define TOUCH_BUTTON_GPIO       GPIO_NUM_5
-#define ASR_BUTTON_GPIO         GPIO_NUM_19
-#define BUILTIN_LED_GPIO        GPIO_NUM_2
-
-#define ML307_RX_PIN            GPIO_NUM_16
-#define ML307_TX_PIN            GPIO_NUM_17
-
-#define DISPLAY_SDA_PIN GPIO_NUM_4
-#define DISPLAY_SCL_PIN GPIO_NUM_15
-#define DISPLAY_WIDTH   128
-
-#if CONFIG_OLED_SSD1306_128X32
-#define DISPLAY_HEIGHT  32
-#elif CONFIG_OLED_SSD1306_128X64 || CONFIG_OLED_SH1106_128X64
-#define DISPLAY_HEIGHT  64
-#else
-#error "OLED display type is not selected"
-#endif
-
-#define DISPLAY_MIRROR_X true
-#define DISPLAY_MIRROR_Y true
-
-
-// A MCP Test: Control a lamp
-#define LAMP_GPIO GPIO_NUM_18
-
-#endif // _BOARD_CONFIG_H_
