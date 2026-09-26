@@ -70,3 +70,8 @@
 #define BOARD_POWER_GPIO        GPIO_NUM_NC
 #define BOARD_LED_GPIO          GPIO_NUM_NC
 #define BOARD_BUTTON_GPIO       GPIO_NUM_0
+
+// 关闭离线唤醒，不打包wakenet模型，解决assets分区溢出
+#undef CONFIG_ESP_SR
+#define CONFIG_ESP_SR 0
+
