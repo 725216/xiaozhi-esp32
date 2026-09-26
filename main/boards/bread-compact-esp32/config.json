@@ -1,6 +1,7 @@
 {
     "type": "bread-compact-esp32",
     "target": "esp32",
+    "wake_word": false,
     "builds": [
         {
             "name": "bread-compact-esp32",
